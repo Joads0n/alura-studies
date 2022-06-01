@@ -1,42 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import { ITarefa } from "../../types/tarefa";
 import Button from "../Button";
-import formStyle from './Form.module.scss'
+import { v4 as uuidv4 } from 'uuid';
+import formStyle from './Form.module.scss';
 
-class Form extends React.Component {
-    render() {
-        return (
-            <form className={formStyle.novaTarefa}>
+interface Props { 
+    setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>> 
+}
 
-                <div className={formStyle.inputContainer}>
-                    <label htmlFor="tarefa">
-                        Adicione um novo estudo
-                    </label>
-                    <input type="text"
-                        name="tarefa"
-                        id="tarefa"
-                        placeholder="O que você quer estudar"
-                        required
-                    />
-                </div>
+function Form({ setTarefas } : Props){
+    const [tarefa, setTarefa] = useState("");
+    const [tempo, setTempo] = useState("00:00");
 
-                <div className={formStyle.inputContainer}>
-                    <label htmlFor="tempo">Tempo</label>
-                    <input type="time"
-                        step="1"
-                        name="tempo"
-                        id="tempo"
-                        min="00:00:00"
-                        max="01:30:00"
-                        required
-                    />
-                    <Button>
-                        Adicionar
-                    </Button>
-                           
-                </div>
-            </form>
+    function adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        evento.preventDefault();
+        setTarefas(tarefasAntigas => 
+          [
+            ...tarefasAntigas,
+            {
+              tarefa,
+              tempo,
+              selecionado: false,
+              completado: false,
+              id: uuidv4()
+            }
+          ]
         )
+        setTarefa("");
+        setTempo("00:00");
     }
+
+    return (
+        <form className={formStyle.novaTarefa}
+            onSubmit={adicionarTarefa}
+        >
+
+            <div className={formStyle.inputContainer}>
+                <label htmlFor="tarefa">
+                    Adicione um novo estudo
+                </label>
+                <input type="text"
+                    name="tarefa"
+                    value={tarefa}
+                    onChange={event => setTarefa(event.target.value)}
+                    id="tarefa"
+                    placeholder="O que você quer estudar"
+                    required
+                />
+            </div>
+
+            <div className={formStyle.inputContainer}>
+                <label htmlFor="tempo">Tempo</label>
+                <input type="time"
+                    step="1"
+                    name="tempo"
+                    value={tempo}
+                    onChange={event => setTempo(event.target.value)}
+                    id="tempo"
+                    min="00:00:00"
+                    max="01:30:00"
+                    required
+                />           
+            </div>
+                <Button type="submit">
+                    Adicionar
+                </Button>
+        </form>
+    )
 }
 
 export default Form;
