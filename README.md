@@ -25,7 +25,7 @@ O projeto em questão é um Cronômetro para a realização de estudos, inicialm
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](#).
+Você pode visualizar a aplicação através [desse link](https://alura-studies-five.vercel.app/).
 
 ---
 
