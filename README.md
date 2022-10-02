@@ -18,7 +18,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [ReactJs](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html)
-- [ESLint](https://eslint.org/docs/latest/)
 
 ## 💻 Projeto
 
