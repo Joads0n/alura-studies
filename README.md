@@ -4,7 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/joads0n/alura-studies)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/joads0n/alura-studies/dev/sass)
 
-Projeto feito no curso do [Alura](https://www.alura.com.br/) na formação de ReactJs com TypeScript ncurso React: escrevendo com Typescript ministrado por [Luiz Fernando](https://github.com/lfrprazeres), utilizando essas tecnologia e aplicado seus principios. O projeto tem por obejtivo a aplicação de diversos conhecimentos de base do react e typescript.
+Projeto feito no curso do [Alura](https://www.alura.com.br/) na formação de ReactJs com TypeScript no curso React: escrevendo com Typescript ministrado por [Luiz Fernando](https://github.com/lfrprazeres), utilizando essas tecnologia e aplicado seus principios. O projeto tem por obejtivo a aplicação de diversos conhecimentos de base do react e typescript.
 
 <br>
 
@@ -18,6 +18,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [ReactJs](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html)
+- [ESLint](https://eslint.org/docs/latest/)
 
 ## 💻 Projeto
 
